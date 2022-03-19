@@ -1,10 +1,10 @@
 [package]
-name = "csv-sniffer"
-description = "A CSV file format sniffer for Rust"
-version = "0.1.1"
-authors = ["Jamie Blondin <jblondin@gmail.com>"]
+name = "qsv-sniffer"
+description = "A CSV file format sniffer for Rust (fork of csv-sniffer)"
+version = "0.2.0"
+authors = ["Joel Natividad <joel@datHere.com>"]
 license-file = "LICENSE"
-repository = "https://github.com/jblondin/csv-sniffer"
+repository = "https://github.com/jqnatividad/csv-sniffer"
 exclude = ["tests/data/*"]
 
 [dependencies]
