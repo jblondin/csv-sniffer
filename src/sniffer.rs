@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 use std::fs::File;
 use std::io::{Read, Seek, SeekFrom};
 use std::path::Path;
@@ -439,9 +439,7 @@ fn quote_count<R: Read>(
     };
     let re = Regex::new(&pattern).unwrap();
 
-    // TODO: a hashmap isn't an ideal choice for this, I believe (since it requires a linear
-    // search of the values at the end). Consider other options
-    let mut delim_count_map: HashMap<String, usize> = HashMap::new();
+    let mut delim_count_map: BTreeMap<String, usize> = BTreeMap::new();
     let mut count = 0;
     for line in sample_iter {
         let line = line?;
