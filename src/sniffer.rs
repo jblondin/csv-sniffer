@@ -59,14 +59,14 @@ impl Sniffer {
     /// The size of the sample to examine while sniffing. If using `SampleSize::Records`, the
     /// sniffer will use the `Terminator::CRLF` as record separator.
     ///
-    /// The sample size defaults to `SampleSize::Bytes(4096)`.
+    /// The sample size defaults to `SampleSize::Records(100)`.
     pub fn sample_size(&mut self, sample_size: SampleSize) -> &mut Sniffer {
         self.sample_size = Some(sample_size);
         self
     }
 
     fn get_sample_size(&self) -> SampleSize {
-        self.sample_size.unwrap_or(SampleSize::Bytes(1 << 14))
+        self.sample_size.unwrap_or(SampleSize::Records(100))
     }
 
     /// Sniff the CSV file located at the provided path, and return a `Reader` (from the
