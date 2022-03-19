@@ -1,10 +1,10 @@
 extern crate csv;
-extern crate csv_sniffer;
+extern crate qsv_sniffer;
 
 use std::path::Path;
 
 use csv::Terminator;
-use csv_sniffer::metadata::*;
+use qsv_sniffer::metadata::*;
 
 fn main() {
     let data_filepath = Path::new(file!())
