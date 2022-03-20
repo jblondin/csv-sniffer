@@ -107,16 +107,18 @@ impl fmt::Display for Dialect {
             Quote::Some(chr) => format!("{}", char::from(chr)),
             Quote::None => "none".into()
         })?;
-        writeln!(f, "\tDouble-quote escapes?: {}", self.doublequote_escapes)?;
-        writeln!(f, "\tEscape character: {}", match self.escape {
-            Escape::Enabled(chr) => format!("{}", char::from(chr)),
-            Escape::Disabled => "none".into(),
+        // only display detected properties.
+        // TODO: Uncomment these properties when they are detected by sniffer.
+        // writeln!(f, "\tDouble-quote escapes?: {}", self.doublequote_escapes)?;
+        // writeln!(f, "\tEscape character: {}", match self.escape {
+        //     Escape::Enabled(chr) => format!("{}", char::from(chr)),
+        //     Escape::Disabled => "none".into(),
 
-        })?;
-        writeln!(f, "\tComment character: {}", match self.comment {
-            Comment::Enabled(chr) => format!("{}", char::from(chr)),
-            Comment::Disabled => "none".into()
-        })?;
+        // })?;
+        // writeln!(f, "\tComment character: {}", match self.comment {
+        //     Comment::Enabled(chr) => format!("{}", char::from(chr)),
+        //     Comment::Disabled => "none".into()
+        // })?;
         writeln!(f, "\tFlexible: {}", self.flexible)
     }
 }
