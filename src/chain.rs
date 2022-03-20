@@ -108,7 +108,7 @@ impl Chain {
             // print!("{:>30e},{}", iterations[0][iterations[0].len() - 1].prob, " ");
         }
         // println!();
-
+        
         for t in 0..self.observations.len() {
             // since we start with iterations already at length 1, the index of this newly-pushed
             // vector will be t + 1.
